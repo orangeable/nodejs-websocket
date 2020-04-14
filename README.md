@@ -20,4 +20,4 @@ Note:  You can replace port 9600 with any available port on your system.
 
 ## For the client-side JavaScript portion:
 
-Visit [a link](https://github.com/orangeable/javascript-chat)
+[JavaScript chat room](https://github.com/orangeable/javascript-chat)
