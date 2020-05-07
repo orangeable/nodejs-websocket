@@ -25,12 +25,6 @@ ws_server.on("request", function(req) {
     var connection = req.accept(null, req.origin);
 
     connection.on("message", function(message) {
-        var data = {
-            type: "message",
-            username: username,
-            message: message
-        };
-
-        connection.send(JSON.stringify(data));
+        connection.send(message.utf8Data);
     });
 });
