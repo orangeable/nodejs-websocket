@@ -4,7 +4,6 @@ var http = require("http");
 
 
 // local variables:
-var username = "You";
 var port = 9600;
 var connections = [];
 
@@ -23,13 +22,13 @@ var ws_server = new websocket({
 
 // on server request, send message:
 ws_server.on("request", function(req) {
-    var connection = req.accept(null, req.origin);
+    let connection = req.accept(null, req.origin);
 
-    connections.push( connection );
+    connections.push(connection);
 
     connection.on("message", function(message) {
-        for ( var i = 0; i < connections.length; i++ ) {
-            connections[ i ].sendUTF( message.utf8Data );
+        for (let i = 0; i < connections.length; i++) {
+            connections[i].sendUTF(message.utf8Data);
         }
     });
 });
